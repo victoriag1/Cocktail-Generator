@@ -5,30 +5,34 @@ fetch (cocktailSearch)
 .then(res => res.json())
 .then(data => console.log(data))
 
-//getting elements
-document.getElementById() 
-document.getElementById()
+fetch(ingredients)
+.then(res => res.json())
+.then(data => console.log(data))
 
-// events 
-const random= document.addEventListener('click', handleClick)
-const details= document.addEventListener('submit', handleSubmit)
+// //getting elements
+// document.getElementById() 
+// document.getElementById()
 
-function handleClick(){
+// // events 
+// const random= document.addEventListener('click', handleClick)
+// const details= document.addEventListener('submit', handleSubmit)
 
-}
+// function handleClick(){
 
-function handleSubmit(e){
-e.preventDefault()
-}
-// give me a random cocktail
-function randomCocktail() {
+// }
 
-}
+// function handleSubmit(e){
+// e.preventDefault()
+// }
+// // give me a random cocktail
+// function randomCocktail() {
 
-//give me ingredients 
-function cocktailIngredients(){
+// }
 
-}
+// //give me ingredients 
+// function cocktailIngredients(){
+
+// }
 
 
 
