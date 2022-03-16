@@ -4,7 +4,9 @@ const ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i='
 const randomImage =document.getElementById('randomImage')
 const randomButton= document.getElementById('randomButton')
 const ingredientsButton= document.getElementById('ingredientsButton')
+const ingredientsList=document.getElementById('ingredientsList')
 
+//random button section
 function appendIt(){
     randomButton.addEventListener('click', getRandomCocktail)
     randomButton.append()
@@ -24,20 +26,25 @@ function randomCocktail(cocktail) {
 }
 getRandomCocktail()
 
+// ingredients section
+function getIngredients(){
+fetch (ingredients)
+.then(res => res.json())
+.then(data => console.log(data))
+}
+
 function appendIngredients(){
 ingredientsButton.addEventListener('submit', displayIngredients)
 }
 
 function displayIngredients(e){
     e.preventDefault()  
+for (of ){
+}
 
 }
 
-function getIngredients(){
-fetch (ingredients)
-.then(res => res.json())
-.then(data => console.log(data))
-}
+
 
 getIngredients()
 appendIngredients()
