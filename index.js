@@ -1,43 +1,44 @@
 const randomSearch = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 const ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i='
 
-const button= document.getElementById('randombutton')
-const img =document.getElementById('image')
+const randomImage =document.getElementById('randomImage')
+const randomButton= document.getElementById('randomButton')
+const ingredientsButton= document.getElementById('ingredientsButton')
 
-fetch(ingredients)
+function appendIt(){
+    randomButton.addEventListener('click', getRandomCocktail)
+    randomButton.append()
+}
+appendIt()
+
+function getRandomCocktail(){
+fetch(randomSearch)
 .then(res => res.json())
-.then(data => console.log(data))
+.then(data => randomCocktail(data))
 
-fetch (randomSearch)
-.then(res => res.json())
-.then(data => console.log(data))
+function randomCocktail(cocktail) {
+    console.log(cocktail.drinks[0])
+    randomImage.src =cocktail.drinks[0].strDrinkThumb
+    randomImage.append()
+    }
+}
+getRandomCocktail()
 
-// my click button function
-const random= document.addEventListener('click', handleClick)
- function handleClick(button){
- }
- //give me a random cocktail
-function randomCocktail() {
-    
+function appendIngredients(){
+ingredientsButton.addEventListener('submit', displayIngredients)
 }
 
+function displayIngredients(e){
+    e.preventDefault()  
 
+}
 
+function getIngredients(){
+fetch (ingredients)
+.then(res => res.json())
+.then(data => console.log(data))
+}
 
+getIngredients()
+appendIngredients()
 
-
-
-
-// const details= document.addEventListener('submit', handleSubmit)
-
-// function handleSubmit(e){
-// e.preventDefault()
-// }
-
-
-// //give me ingredients 
-// function cocktailIngredients(){
-
-// }
-
-//preventDefault must be in the handle submit 
