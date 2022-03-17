@@ -9,43 +9,43 @@ const ingredientsList=document.getElementById('ingredientsList')
 //random button section
 function appendIt(){
     randomButton.addEventListener('click', getRandomCocktail)
-    randomButton.append()
 }
-appendIt()
+appendIt() //dom content loaded 
 
 function getRandomCocktail(){
 fetch(randomSearch)
 .then(res => res.json())
 .then(data => randomCocktail(data))
+}
 
 function randomCocktail(cocktail) {
     console.log(cocktail.drinks[0])
     randomImage.src =cocktail.drinks[0].strDrinkThumb
-    randomImage.append()
-    }
+// const recipeDetailsButton= document.createElement('button')
+//     recipeDetailsButton.addEventListener('click',() => getIngredients(cocktail.drinks[0]))
+//     recipeDetailsButton.id= 'ingredientsButton'
+//     recipeDetailsButton.innerText='Heres How To Make It!' 
+//     recipeDetails.appendChild(recipeDetailsButton)
 }
-getRandomCocktail()
-
+//inside html h2 and 
 // ingredients section
-function getIngredients(){
-fetch (ingredients)
-.then(res => res.json())
-.then(data => console.log(data))
-}
+// function getIngredients(cocktail){
+//     console.log(cocktail.strAlcoholic)
+// fetch (ingredients)
+// .then(res => res.json())
+// .then(data => console.log(data))
+//}
 
-function appendIngredients(){
-ingredientsButton.addEventListener('submit', displayIngredients)
-}
+// function appendIngredients(){
+// ingredientsButton.addEventListener('submit', displayIngredients)
+// }
 
-function displayIngredients(e){
-    e.preventDefault()  
-for (of ){
-}
+// function displayIngredients(e){
+//     e.preventDefault()  
+// for (of ){
+// }
 
-}
+// }
 
-
-
-getIngredients()
-appendIngredients()
-
+//append ingredients 
+//form element to be worked on today 
