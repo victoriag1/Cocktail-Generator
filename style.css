@@ -1,7 +1,4 @@
-
-
-
-h1,h2 {
+h1,h2,h3,li{
     text-align: center;
     font-family:fantasy;
     color: snow;
@@ -17,4 +14,3 @@ img {
     width:400px;
     text-align:center;
 }
-

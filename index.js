@@ -1,16 +1,23 @@
 const randomSearch = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 const ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i='
+const cocktailAPI= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 
-const randomImage =document.getElementById('randomImage')
+const randomImage=document.getElementById('randomImage')
 const randomButton= document.getElementById('randomButton')
-const ingredientsButton= document.getElementById('ingredientsButton')
-const ingredientsList=document.getElementById('ingredientsList')
+
+const cocktailSearch=document.getElementById('cocktailSearch')
+const cocktailButton=document.getElementById('cocktailButton')
+const title=document.getElementById('title')
+const instructions=document.getElementById('instructions')
+
+//dom content loaded
+document.addEventListener('DOMContentLoaded', appendIt)
 
 //random button section
 function appendIt(){
     randomButton.addEventListener('click', getRandomCocktail)
-}
-appendIt() //dom content loaded 
+    cocktailSearch.addEventListener('submit', searchDetails)
+} 
 
 function getRandomCocktail(){
 fetch(randomSearch)
@@ -21,31 +28,31 @@ fetch(randomSearch)
 function randomCocktail(cocktail) {
     console.log(cocktail.drinks[0])
     randomImage.src =cocktail.drinks[0].strDrinkThumb
-// const recipeDetailsButton= document.createElement('button')
-//     recipeDetailsButton.addEventListener('click',() => getIngredients(cocktail.drinks[0]))
-//     recipeDetailsButton.id= 'ingredientsButton'
-//     recipeDetailsButton.innerText='Heres How To Make It!' 
-//     recipeDetails.appendChild(recipeDetailsButton)
 }
-//inside html h2 and 
-// ingredients section
-// function getIngredients(cocktail){
-//     console.log(cocktail.strAlcoholic)
-// fetch (ingredients)
-// .then(res => res.json())
-// .then(data => console.log(data))
-//}
+// search section
+function searchCocktail(cocktailNames){
+fetch(cocktailAPI + cocktailNames.trim().toLowerCase())
+.then(res => res.json())
+.then(data => displaySearch(data.drinks[0]))
+}
 
-// function appendIngredients(){
-// ingredientsButton.addEventListener('submit', displayIngredients)
-// }
+function searchDetails(e){
+    e.preventDefault()
+   let drinks = cocktailSearch.children[0].value
+    searchCocktail(drinks)
+}
 
-// function displayIngredients(e){
-//     e.preventDefault()  
-// for (of ){
-// }
+function displaySearch(){
+title.textContent['strDrink']
+// cocktail.src=cocktail.strInstructions
+// console.log(cocktail)
+}
 
-// }
-
-//append ingredients 
-//form element to be worked on today 
+//for loop
+// list html for info 
+//cocktailSearch.src=cocktail.drink  
+// for(let i = 0; i < 16; i++){
+// console.log(i)
+// const name= document.createElement
+// cocktail.strDrink
+// const image= cocktail.strDrinkThumb
