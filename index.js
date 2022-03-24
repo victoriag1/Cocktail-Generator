@@ -8,7 +8,8 @@ const cocktailSearch=document.getElementById('cocktailSearch')
 const cocktailButton=document.getElementById('cocktailButton')
 const cocktailName =document.getElementById('cocktailName')
 const instructions=document.getElementById('instructions')
-const ingredients=document.getElementById('ingredients')
+//const searchBar=document.getElementsByClassName('search-bar')
+//const ingredients=document.getElementById('ingredients')
 
 //dom content loaded
 document.addEventListener('DOMContentLoaded', appendIt)
@@ -28,8 +29,8 @@ fetch(randomSearch)
 function randomCocktail(cocktail) {
     //console.log(cocktail.drinks[0])
     randomImage.src =cocktail.drinks[0].strDrinkThumb
-    cocktailName.innerText=cocktail.strDrink
-    instructions.textContent=cocktail.strInstructions
+    cocktailName.innerText=cocktail.drinks[0].strDrink
+    instructions.textContent=cocktail.drinks[0].strInstructions
 }
 // search section
 function searchCocktail(cocktailNames){
@@ -45,25 +46,9 @@ function searchDetails(e){
 } 
 
 function displaySearch(cocktail){
-    displaySearch.coc=''
+    cocktailSearch.reset()
     cocktailName.innerText=cocktail.strDrink
     instructions.textContent=cocktail.strInstructions
     randomImage.src =cocktail.strDrinkThumb
-    //for(let )
-
-    // let drinks = data["drinks"][0];
-    // for (let i = 0; i < 16; i++) {
-    //     let item = document.createElement('li');
-    //     item.textContent = drinks[`strIngredient${i}`];
-    // }
-
 }
-//console.log(displaySearch)
-//for loop
-// list html for info 
-//cocktailSearch.src=cocktail.drink  
-// for(let i = 0; i < 16; i++){
-// console.log(i)
-// const name= document.createElement
-// cocktail.strDrink
-// const image= cocktail.strDrinkThumb
+
