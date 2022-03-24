@@ -1,9 +1,13 @@
-h1,h2,h3,li{
+h1,h2,h3{
     text-align: center;
     font-family:fantasy;
     color: snow;
 }
-
+li {
+    text-align: center;
+    font-family:fantasy;
+    color: snow;
+}
 
 body {
     text-align: center;

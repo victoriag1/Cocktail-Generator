@@ -1,5 +1,4 @@
 const randomSearch = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
-const ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i='
 const cocktailAPI= 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 
 const randomImage=document.getElementById('randomImage')
@@ -7,8 +6,9 @@ const randomButton= document.getElementById('randomButton')
 
 const cocktailSearch=document.getElementById('cocktailSearch')
 const cocktailButton=document.getElementById('cocktailButton')
-const title=document.getElementById('title')
+const cocktailName =document.getElementById('cocktailName')
 const instructions=document.getElementById('instructions')
+const ingredients=document.getElementById('ingredients')
 
 //dom content loaded
 document.addEventListener('DOMContentLoaded', appendIt)
@@ -26,8 +26,10 @@ fetch(randomSearch)
 }
 
 function randomCocktail(cocktail) {
-    console.log(cocktail.drinks[0])
+    //console.log(cocktail.drinks[0])
     randomImage.src =cocktail.drinks[0].strDrinkThumb
+    cocktailName.innerText=cocktail.strDrink
+    instructions.textContent=cocktail.strInstructions
 }
 // search section
 function searchCocktail(cocktailNames){
@@ -38,16 +40,25 @@ fetch(cocktailAPI + cocktailNames.trim().toLowerCase())
 
 function searchDetails(e){
     e.preventDefault()
-   let drinks = cocktailSearch.children[0].value
+    let drinks = cocktailSearch.children[0].value
     searchCocktail(drinks)
-}
+} 
 
-function displaySearch(){
-title.textContent['strDrink']
-// cocktail.src=cocktail.strInstructions
-// console.log(cocktail)
-}
+function displaySearch(cocktail){
+    displaySearch.coc=''
+    cocktailName.innerText=cocktail.strDrink
+    instructions.textContent=cocktail.strInstructions
+    randomImage.src =cocktail.strDrinkThumb
+    //for(let )
 
+    // let drinks = data["drinks"][0];
+    // for (let i = 0; i < 16; i++) {
+    //     let item = document.createElement('li');
+    //     item.textContent = drinks[`strIngredient${i}`];
+    // }
+
+}
+//console.log(displaySearch)
 //for loop
 // list html for info 
 //cocktailSearch.src=cocktail.drink  
