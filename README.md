@@ -15,7 +15,8 @@ Each cocktail will be displayed with:
 User Deliverables
 1. As a user, I should be able to search for any alcoholic drink in an array of options.
 2. As a user, the name and instructions on how to make the drink should appear on the page as well as an image. 
-3. Users will also be able to access a random cocktail  
+3. Users will also be able to access a random cocktail with description and name after clicking a button.
+4. As a user, I should be able to access an image and instructions of the random cocktail clicked after button is pressed. 
 
 
 #API 
